@@ -32,11 +32,13 @@ Follow these four phases in strict order. **Do not advance to the next phase if 
 The received argument is: `$ARGUMENTS`
 
 If `$ARGUMENTS` is empty:
+
 - List the files available in `specs/` (you already have them above).
 - Ask the user to specify the exact name of the spec.
 - Stop and wait for an answer. Do not continue.
 
 If `$ARGUMENTS` has a value:
+
 - Look for the file in `specs/`. The user may have written the full name (`01-mvp-arkanoid`), only the number (`01`), or only the slug (`mvp-arkanoid`). Try to find the correct file in any of those cases.
 - If you do not find the file, show the available specs and ask the user to correct the name.
 - If you do find it, continue to Phase 2.
@@ -64,14 +66,14 @@ Treat any of the following (and their equivalents in other languages) as the **A
 
 Anything else (Draft / Borrador, In review / En revisión, Implemented / Implementado, Obsolete / Obsoleto, or any unrecognized value) means **stop** and show the error message below.
 
-| State category | Examples (any language) | Action |
-|---|---|---|
-| Approved | `Approved`, `Aprobado`, `Aprovado`, `Approuvé`, … | Continue to Phase 3. |
-| Draft | `Draft`, `Borrador`, … | Stop. Show the error message below. |
-| In review | `In review`, `En revisión`, … | Stop. Show the error message below. |
-| Implemented | `Implemented`, `Implementado`, … | Stop. Show the error message below. |
-| Obsolete | `Obsolete`, `Obsoleto`, … | Stop. Show the error message below. |
-| State line not found / unrecognized value | — | Stop. The file does not follow the expected format. Tell this to the user. |
+| State category                            | Examples (any language)                           | Action                                                                     |
+| ----------------------------------------- | ------------------------------------------------- | -------------------------------------------------------------------------- |
+| Approved                                  | `Approved`, `Aprobado`, `Aprovado`, `Approuvé`, … | Continue to Phase 3.                                                       |
+| Draft                                     | `Draft`, `Borrador`, …                            | Stop. Show the error message below.                                        |
+| In review                                 | `In review`, `En revisión`, …                     | Stop. Show the error message below.                                        |
+| Implemented                               | `Implemented`, `Implementado`, …                  | Stop. Show the error message below.                                        |
+| Obsolete                                  | `Obsolete`, `Obsoleto`, …                         | Stop. Show the error message below.                                        |
+| State line not found / unrecognized value | —                                                 | Stop. The file does not follow the expected format. Tell this to the user. |
 
 If you are unsure whether a value means "approved", **do not assume**. Stop and ask the user to clarify or to update the spec to the canonical wording.
 
@@ -100,15 +102,18 @@ Do not offer alternatives, do not suggest "I can still start if you want". The b
 Once you have confirmed the state means `Approved`:
 
 1. Derive the branch name from the spec file's full name, without the extension. Format: `spec-NN-slug`. Examples:
+
    - `01-mvp-arkanoid.md` → branch `spec-01-mvp-arkanoid`
    - `02-powerups.md` → branch `spec-02-powerups`
 
 2. Check whether the branch already exists:
+
    - If it **does not exist**: create it with `git checkout -b spec-NN-slug`.
    - If it **already exists**: inform the user that the branch already existed (it may mean previous work is being resumed).
    - In both cases: switch to the branch with `git checkout spec-NN-slug` and confirm the change was successful before continuing.
 
 3. Visually confirm to the user that the branch was created and that you are on it:
+
    ```
    ✅ Ready to implement.
 
@@ -145,12 +150,14 @@ Once confirmed, follow these rules during the entire implementation:
 **One rule above all:** implement what the spec says. If something in the spec looks suboptimal to you, mention it as an observation but implement what was agreed. Changes to the spec go into the spec, not into the code by surprise.
 
 **Work rhythm:**
+
 - Implement one step of the plan.
 - Show a summary of which files you touched and what you did.
 - Say: `Step N completed. Could you review the diff and let me know if I continue with Step N+1?`
 - Wait for confirmation before continuing.
 
 **If during the implementation you find an ambiguity** the spec does not resolve:
+
 - Stop.
 - Describe the ambiguity exactly.
 - Present two or three concrete options.
@@ -158,11 +165,13 @@ Once confirmed, follow these rules during the entire implementation:
 - Do not improvise.
 
 **If the user asks for something that is out of the spec's scope:**
+
 - Remind them that it is out of this spec's scope.
 - Suggest noting it down for the next spec.
 - Do not implement it on this branch.
 
 **When finishing the last step:**
+
 ```
 ✅ All steps of the plan are implemented.
 
