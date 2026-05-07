@@ -200,7 +200,6 @@ Esa separación es lo que evita el scope creep silencioso.
 npx skills@latest add Klerith/fernando-skills
 ```
 
-Asegúrate de seleccionar `/setup-fernando-skills` y ejecútalo dentro de tu proyecto para configurar la ubicación de `specs/` y el idioma.
 
 ### Opción 2 — Otros agentes (Cursor, Codex, Antigravity)
 
