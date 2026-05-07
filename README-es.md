@@ -1,13 +1,29 @@
-# Spec-Driven Design para Claude Code
+[English](README.md) · [Español](README-es.md)
 
-Versión en inglés: [README.md](README.md)
+<p align="center">
+  <h1 align="center">Spec-Driven Skills para Claude Code</h1>
+  <p align="center">Planifica la feature. Apruébala. Impleméntala paso a paso.</p>
+</p>
 
-> Skills para Claude Code que implementan el método spec-driven: planificas la feature en un documento, lo apruebas, y luego se implementa paso a paso. Evita que Claude improvise decisiones de diseño que tú no tomaste.
+<p align="center">
+  <img alt="Licencia" src="https://img.shields.io/github/license/Klerith/fernando-skills">
+  <img alt="Último release" src="https://img.shields.io/github/v/release/Klerith/fernando-skills">
+  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Klerith/fernando-skills?style=social">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-2-blue">
+</p>
 
-Este paquete contiene dos skills complementarios:
+## Inicio rápido
 
-- **`/spec`** — Diseña el documento de la feature haciendo preguntas de clarificación.
-- **`/spec-impl`** — Valida que el spec esté aprobado, crea una rama git, e implementa paso a paso.
+```bash
+npx skills@latest add Klerith/fernando-skills
+```
+
+## Skills
+
+| Skill | Descripción | Argumento |
+| --- | --- | --- |
+| `/spec` | Diseña el documento de la feature haciendo preguntas de clarificación | — |
+| `/spec-impl` | Valida que el spec esté aprobado e implementa paso a paso | `<NN-slug>` |
 
 ---
 
@@ -215,7 +231,7 @@ cd ~/tu-proyecto
 ~/.fernando-skills/scripts/install-to-agent.sh <agent>
 ```
 
-`<agent>` puede ser `claude`, `cursor`, `codex` o `antigravity`. Ver [README.md](./README.md#install-in-other-agents) para detalles.
+`<agent>` puede ser `claude`, `cursor`, `codex` o `antigravity`. Ver [README.md](./README.md#installation) para detalles.
 
 ### Opción 3 — Manual
 
@@ -321,6 +337,19 @@ Implementa un spec aprobado. Pasa por cuatro fases:
 ```
 
 El gap entre los dos skills — releer y cambiar el estado a mano — es deliberado. Es el único momento donde **solo tú puedes hacer algo**. Sin ese gap, el método se degrada a "Claude escribe documentación bonita y luego escribe el código que se le ocurra de todos modos".
+
+---
+
+## Releases
+
+Este proyecto usa [release-please](https://github.com/googleapis/release-please) para releases automáticos. Los mensajes de commit deben seguir [Conventional Commits](https://www.conventionalcommits.org/):
+
+| Prefijo | Efecto |
+| --- | --- |
+| `feat:` | Sube versión minor |
+| `fix:` | Sube versión patch |
+| `feat!:` / `fix!:` | Sube versión major |
+| `docs:`, `chore:`, `refactor:` | Sin cambio de versión |
 
 ---
 

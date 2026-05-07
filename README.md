@@ -1,13 +1,29 @@
-# Spec-Driven Design for Claude Code
+[English](README.md) · [Español](README-es.md)
 
-Spanish version: [README-es.md](README-es.md)
+<p align="center">
+  <h1 align="center">Spec-Driven Skills for Claude Code</h1>
+  <p align="center">Plan the feature. Approve it. Implement it step by step.</p>
+</p>
 
-> Skills for Claude Code that implement the spec-driven method: you plan the feature in a document, approve it, and then it gets implemented step by step. Prevents Claude from improvising design decisions you never made.
+<p align="center">
+  <img alt="License" src="https://img.shields.io/github/license/Klerith/fernando-skills">
+  <img alt="Latest Release" src="https://img.shields.io/github/v/release/Klerith/fernando-skills">
+  <img alt="GitHub Stars" src="https://img.shields.io/github/stars/Klerith/fernando-skills?style=social">
+  <img alt="Skills" src="https://img.shields.io/badge/skills-2-blue">
+</p>
 
-This package contains two complementary skills:
+## Quick start
 
-- **`/spec`** — Designs the feature document by asking clarifying questions.
-- **`/spec-impl`** — Validates the spec is approved, creates a git branch, and implements step by step.
+```bash
+npx skills@latest add Klerith/fernando-skills
+```
+
+## Skills
+
+| Skill | Description | Argument |
+| --- | --- | --- |
+| `/spec` | Designs the feature document by asking clarifying questions | — |
+| `/spec-impl` | Validates the spec is approved and implements step by step | `<NN-slug>` |
 
 ---
 
@@ -332,6 +348,19 @@ Implements an approved spec. Goes through four phases:
 ```
 
 The gap between the two skills — re-reading and changing the status by hand — is deliberate. It's the only moment where **only you can do something**. Without that gap, the method degrades to "Claude writes pretty documentation and then writes whatever code occurs to it anyway".
+
+---
+
+## Releases
+
+This project uses [release-please](https://github.com/googleapis/release-please) for automated releases. Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/):
+
+| Prefix | Effect |
+| --- | --- |
+| `feat:` | Bumps minor version |
+| `fix:` | Bumps patch version |
+| `feat!:` / `fix!:` | Bumps major version |
+| `docs:`, `chore:`, `refactor:` | No version bump |
 
 ---
 
