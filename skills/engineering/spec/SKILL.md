@@ -102,11 +102,13 @@ When all sections are confirmed:
 6. Confirm to the user:
    - Path of the created file.
    - Reminder: the spec is in `Draft` state. Change it to `Approved` once you have re-read it.
-   - Suggestion for the next step: leave the spec command and start the implementation with a prompt like _"Implement spec NN step by step, pausing after each step of the implementation plan so I can review the diff."_
+   - Next step: once reviewed and approved, run `/spec-impl NN-slug` to implement it.
+   - **Stop here.** Do not propose implementing the spec, writing code, or taking any further action beyond this confirmation.
 
 ## Hard rules
 
 - **Never write code during this command.** Only the spec's `.md` file at the end.
+- **Never propose implementing the spec after saving it.** Your job ends when the file is written. The user runs `/spec-impl` when they are ready.
 - **Never assume decisions the user did not confirm.** If you are missing information, ask.
 - **Never generate the full spec in a single response.** Section by section, with confirmation.
 - **If the user wants to speed up and skip Phase 2**, remind them: "Questions now save hours later. Are you sure you want to skip them?". If they insist, respect their decision but record it in the spec's decisions section ("Quick definition without detailed clarification").
